@@ -1,0 +1,290 @@
+/* CSS Variables for Color Palette */
+:root {
+    /* General Colors */
+    --body-bg: #F5F5F5;                /* Light Gray Background */
+    --body-text-color: #263238;        /* Dark Slate Gray */
+    --content-color: #455A64;          /* Slate Gray */
+
+    /* Introduction */
+    --intro-color: #455A64;            /* Neutral Gray */
+
+    /* Absolute Necessary Skills */
+    --absolute-necessary-bg: #FFCDD2;   /* Light Red Background */
+    --absolute-necessary-color: #E53935;/* Vibrant Red */
+
+    /* Very Good to Have Skills */
+    --very-good-bg: #FFECB3;            /* Light Orange Background */
+    --very-good-color: #FB8C00;         /* Vibrant Orange */
+
+    /* Cool and Unique Tech Skills */
+    --cool-unique-bg: #FFF9C4;          /* Light Yellow Background */
+    --cool-unique-color: #FDD835;       /* Vibrant Yellow */
+
+    /* Expected Outcomes by Graduation */
+    --expected-outcomes-bg: #C8E6C9;    /* Light Green Background */
+    --expected-outcomes-color: #43A047; /* Energetic Green */
+
+    /* Table of Contents */
+    --toc-bg: #FFFFFF;                  /* White Background */
+    --toc-border: #E0E0E0;              /* Light Gray Border */
+    --toc-link: #1E88E5;                /* Blue Links */
+    --toc-link-hover: #1565C0;          /* Darker Blue on Hover */
+
+    /* Footer */
+    --footer-bg: #263238;               /* Dark Slate Gray */
+    --footer-text: #FFFFFF;             /* White Text */
+    --footer-link: #B0BEC5;             /* Light Gray Links */
+    --footer-link-hover: #FFFFFF;       /* White on Hover */
+
+    /* Section 2 - Absolute Necessary Skills (Red Theme) */
+    --section-2-base-bg: #E53935;        /* Base Red */
+    --section-2-sub1-bg: #FF8A80;        /* Light Red */
+    --section-2-sub2-bg: #FFCDD2;        /* Lighter Red */
+    --section-2-text-color: #FFFFFF;     /* White Text */
+
+    /* Section 3 - Very Good to Have Skills (Orange Theme) */
+    --section-3-base-bg: #FB8C00;        /* Base Orange */
+    --section-3-sub1-bg: #FFB74D;        /* Light Orange */
+    --section-3-sub2-bg: #FFE0B2;        /* Lighter Orange */
+    --section-3-text-color: #FFFFFF;     /* White Text */
+
+    /* Section 4 - Cool and Unique Tech Skills (Yellow Theme) */
+    --section-4-base-bg: #FDD835;        /* Base Yellow */
+    --section-4-sub1-bg: #FFF176;        /* Light Yellow */
+    --section-4-sub2-bg: #FFF9C4;        /* Lighter Yellow */
+    --section-4-text-color: #000000;     /* Black Text for Contrast */
+}
+
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg);
+    color: var(--body-text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+}
+
+/* Container for Main Content */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* 20px top and bottom, auto left and right */
+    padding: 0 20px; /* Optional: add horizontal padding */
+    flex: 1; /* Allows container to grow and push footer to the bottom */
+}
+
+/* Headings and Titles */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--body-text-color);
+}
+.title-main {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--body-text-color);
+}
+
+/* Table of Contents Styles */
+.toc {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--toc-border);
+    border-radius: 10px;
+    background-color: var(--toc-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.toc h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--body-text-color);
+}
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.toc li {
+    margin-bottom: 10px;
+}
+.toc a {
+    text-decoration: none;
+    color: var(--toc-link);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.toc a:hover {
+    color: var(--toc-link-hover);
+}
+
+/* Collapsible Sections */
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: var(--intro-color); /* Default Color for Intro */
+    color: var(--body-text-color); /* Default Text Color */
+    border: 1px solid #333333;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+summary:hover {
+    background-color: #333333; /* Darker on Hover */
+    border-color: #222222; /* Even Darker Border on Hover */
+    color: var(--body-text-color); /* Maintain Default Text Color on Hover */
+}
+/* Hide default markers */
+summary::marker,
+summary::-webkit-details-marker {
+    display: none;
+}
+/* Add custom icons */
+summary::after {
+    content: "➕";
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+details[open] > summary::after {
+    content: "➖";
+}
+/* Indentation and Styling for Nested Sections */
+
+/* Section 2 - Absolute Necessary Skills */
+#absolute-necessary-skills > summary {
+    background-color: var(--section-2-base-bg);
+    color: var(--section-2-text-color);
+    border: 1px solid var(--section-2-base-bg);
+}
+#absolute-necessary-skills > details > summary {
+    background-color: var(--section-2-sub1-bg);
+    color: var(--section-2-text-color);
+    border: 1px solid var(--section-2-sub1-bg);
+    margin-left: 20px;
+}
+#absolute-necessary-skills > details > details > summary {
+    background-color: var(--section-2-sub2-bg);
+    color: var(--section-2-text-color);
+    border: 1px solid var(--section-2-sub2-bg);
+    margin-left: 40px;
+}
+
+/* Section 3 - Very Good to Have Skills */
+#very-good-to-have-skills > summary {
+    background-color: var(--section-3-base-bg);
+    color: var(--section-3-text-color);
+    border: 1px solid var(--section-3-base-bg);
+}
+#very-good-to-have-skills > details > summary {
+    background-color: var(--section-3-sub1-bg);
+    color: var(--section-3-text-color);
+    border: 1px solid var(--section-3-sub1-bg);
+    margin-left: 20px;
+}
+#very-good-to-have-skills > details > details > summary {
+    background-color: var(--section-3-sub2-bg);
+    color: var(--section-3-text-color);
+    border: 1px solid var(--section-3-sub2-bg);
+    margin-left: 40px;
+}
+
+/* Section 4 - Cool and Unique Tech Skills */
+#cool-and-unique-tech-skills-we-offer > summary {
+    background-color: var(--section-4-base-bg);
+    color: var(--section-4-text-color);
+    border: 1px solid var(--section-4-base-bg);
+}
+#cool-and-unique-tech-skills-we-offer > details > summary {
+    background-color: var(--section-4-sub1-bg);
+    color: var(--section-4-text-color);
+    border: 1px solid var(--section-4-sub1-bg);
+    margin-left: 20px;
+}
+#cool-and-unique-tech-skills-we-offer > details > details > summary {
+    background-color: var(--section-4-sub2-bg);
+    color: var(--section-4-text-color);
+    border: 1px solid var(--section-4-sub2-bg);
+    margin-left: 40px;
+}
+
+/* Content inside collapsibles */
+details p, details ul {
+    margin: 15px 0 15px 30px;
+    color: var(--content-color);
+}
+details ul {
+    list-style-type: disc;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 20px;
+    border-top: 1px solid #333333;
+    width: 100%; /* Ensures the footer spans the full width */
+    box-sizing: border-box; /* Includes padding in the width */
+    position: relative;
+    margin: 0; /* Remove any margins that might create gaps */
+}
+footer .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+footer .footer-content p {
+    margin: 5px 0;
+}
+footer .footer-content a {
+    color: var(--footer-link);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+footer .footer-content a:hover {
+    color: var(--footer-link-hover);
+}
+footer .social-links {
+    margin-top: 10px;
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .footer-content a {
+        margin: 5px 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 820px) {
+    .container {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+    summary {
+        padding: 12px 16px;
+    }
+    .toc {
+        padding: 15px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
