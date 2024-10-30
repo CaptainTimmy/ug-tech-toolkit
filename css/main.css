@@ -2,39 +2,16 @@
 :root {
     /* General Colors */
     --body-bg: #F5F5F5;                /* Light Gray Background */
-    --body-text-color: #263238;        /* Dark Slate Gray */
+    --body-text-color: #5b5b5b;        /* Slate Gray */
     --content-color: #455A64;          /* Slate Gray */
 
     /* Introduction */
-    --intro-color: #455A64;            /* Neutral Gray */
+    --intro-bg: #888888;               /* Neutral Gray Background */
+    --intro-text-color: #FFFFFF;        /* White Text */
 
-    /* Absolute Necessary Skills */
-    --absolute-necessary-bg: #FFCDD2;   /* Light Red Background */
-    --absolute-necessary-color: #E53935;/* Vibrant Red */
-
-    /* Very Good to Have Skills */
-    --very-good-bg: #FFECB3;            /* Light Orange Background */
-    --very-good-color: #FB8C00;         /* Vibrant Orange */
-
-    /* Cool and Unique Tech Skills */
-    --cool-unique-bg: #FFF9C4;          /* Light Yellow Background */
-    --cool-unique-color: #FDD835;       /* Vibrant Yellow */
-
-    /* Expected Outcomes by Graduation */
-    --expected-outcomes-bg: #C8E6C9;    /* Light Green Background */
-    --expected-outcomes-color: #43A047; /* Energetic Green */
-
-    /* Table of Contents */
-    --toc-bg: #FFFFFF;                  /* White Background */
-    --toc-border: #E0E0E0;              /* Light Gray Border */
-    --toc-link: #1E88E5;                /* Blue Links */
-    --toc-link-hover: #1565C0;          /* Darker Blue on Hover */
-
-    /* Footer */
-    --footer-bg: #263238;               /* Dark Slate Gray */
-    --footer-text: #FFFFFF;             /* White Text */
-    --footer-link: #B0BEC5;             /* Light Gray Links */
-    --footer-link-hover: #FFFFFF;       /* White on Hover */
+    /* Section 1 - Main Heading */
+    --section-1-bg: #888888;           /* Facebook Blue Background */
+    --section-1-text-color: #FFFFFF;    /* White Text */
 
     /* Section 2 - Absolute Necessary Skills (Red Theme) */
     --section-2-base-bg: #E53935;        /* Base Red */
@@ -49,10 +26,28 @@
     --section-3-text-color: #FFFFFF;     /* White Text */
 
     /* Section 4 - Cool and Unique Tech Skills (Yellow Theme) */
-    --section-4-base-bg: #FDD835;        /* Base Yellow */
-    --section-4-sub1-bg: #FFF176;        /* Light Yellow */
-    --section-4-sub2-bg: #FFF9C4;        /* Lighter Yellow */
-    --section-4-text-color: #000000;     /* Black Text for Contrast */
+    --section-4-base-bg: #fed000;        /* Base Yellow */
+    --section-4-sub1-bg: #fecf00dc;        /* Light Yellow */
+    --section-4-sub2-bg: #fecf00a8;        /* Lighter Yellow */
+    --section-4-text-color: #FFFFFF;     /* Black Text for Contrast */
+
+    /* Section 5 - Expected Outcomes by Graduation (Green Theme) */
+    --section-5-base-bg: #54dd39;        /* Energetic Green */
+    --section-5-sub1-bg: #81C784;        /* Light Green */
+    --section-5-sub2-bg: #C8E6C9;        /* Lighter Green */
+    --section-5-text-color: #FFFFFF;     /* White Text */
+
+    /* Table of Contents */
+    --toc-bg: #FFFFFF;                  /* White Background */
+    --toc-border: #E0E0E0;              /* Light Gray Border */
+    --toc-link: #1E88E5;                /* Blue Links */
+    --toc-link-hover: #1565C0;          /* Darker Blue on Hover */
+
+    /* Footer */
+    --footer-bg: #263238;               /* Dark Slate Gray */
+    --footer-text: #FFFFFF;             /* White Text */
+    --footer-link: #B0BEC5;             /* Light Gray Links */
+    --footer-link-hover: #FFFFFF;       /* White on Hover */
 }
 
 /* General Styles */
@@ -80,12 +75,16 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 700;
-    color: var(--body-text-color);
+    background-color: var(--section-1-bg); /* Dark Blue Background */
+    color: var(--section-1-text-color);    /* White Text */
+    padding: 20px;
+    border-radius: 8px;
 }
+
 .title-main {
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 700;
     color: var(--body-text-color);
 }
@@ -127,9 +126,8 @@ summary {
     font-weight: 600;
     cursor: pointer;
     padding: 15px 20px;
-    background-color: var(--intro-color); /* Default Color for Intro */
-    color: var(--body-text-color); /* Default Text Color */
-    border: 1px solid #333333;
+    background-color: var(--intro-bg); /* Neutral Gray Background */
+    color: var(--intro-text-color);    /* White Text */
     border-radius: 8px;
     margin-top: 15px;
     display: flex;
@@ -139,8 +137,8 @@ summary {
 }
 summary:hover {
     background-color: #333333; /* Darker on Hover */
-    border-color: #222222; /* Even Darker Border on Hover */
-    color: var(--body-text-color); /* Maintain Default Text Color on Hover */
+    border-color: #222222;     /* Even Darker Border on Hover */
+    color: var(--intro-text-color); /* Maintain White Text on Hover */
 }
 /* Hide default markers */
 summary::marker,
@@ -158,7 +156,7 @@ details[open] > summary::after {
 }
 /* Indentation and Styling for Nested Sections */
 
-/* Section 2 - Absolute Necessary Skills */
+/* Section 2 - Absolute Necessary Skills (Red Theme) */
 #absolute-necessary-skills > summary {
     background-color: var(--section-2-base-bg);
     color: var(--section-2-text-color);
@@ -177,7 +175,7 @@ details[open] > summary::after {
     margin-left: 40px;
 }
 
-/* Section 3 - Very Good to Have Skills */
+/* Section 3 - Very Good to Have Skills (Orange Theme) */
 #very-good-to-have-skills > summary {
     background-color: var(--section-3-base-bg);
     color: var(--section-3-text-color);
@@ -196,7 +194,7 @@ details[open] > summary::after {
     margin-left: 40px;
 }
 
-/* Section 4 - Cool and Unique Tech Skills */
+/* Section 4 - Cool and Unique Tech Skills (Yellow Theme) */
 #cool-and-unique-tech-skills-we-offer > summary {
     background-color: var(--section-4-base-bg);
     color: var(--section-4-text-color);
@@ -212,6 +210,25 @@ details[open] > summary::after {
     background-color: var(--section-4-sub2-bg);
     color: var(--section-4-text-color);
     border: 1px solid var(--section-4-sub2-bg);
+    margin-left: 40px;
+}
+
+/* Section 5 - Expected Outcomes by Graduation (Green Theme) */
+#expected-outcomes-by-graduation > summary {
+    background-color: var(--section-5-base-bg);
+    color: var(--section-5-text-color);
+    border: 1px solid var(--section-5-base-bg);
+}
+#expected-outcomes-by-graduation > details > summary {
+    background-color: var(--section-5-sub1-bg);
+    color: var(--section-5-text-color);
+    border: 1px solid var(--section-5-sub1-bg);
+    margin-left: 20px;
+}
+#expected-outcomes-by-graduation > details > details > summary {
+    background-color: var(--section-5-sub2-bg);
+    color: var(--section-5-text-color);
+    border: 1px solid var(--section-5-sub2-bg);
     margin-left: 40px;
 }
 
